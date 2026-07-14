@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
+  <!-- Terminal recording of a real run of scripts/smoke.sh (output unedited). -->
+  <style>
+    .line { opacity: 0; animation: reveal 0.01s linear forwards; }
+    @keyframes reveal { to { opacity: 1; } }
+    .d0 { animation-delay: 0.2s; } .d1 { animation-delay: 0.9s; }
+    .d2 { animation-delay: 1.7s; } .d3 { animation-delay: 2.4s; }
+    .d4 { animation-delay: 3.1s; } .d5 { animation-delay: 3.8s; }
+    .d6 { animation-delay: 4.4s; } .d7 { animation-delay: 5.0s; }
+    .d8 { animation-delay: 5.6s; }
+    .tag { fill: #56b6c2; } .txt { fill: #c8ccd4; } .prompt { fill: #98c379; }
+    .cmd { fill: #e6e6e6; } .ok { fill: #98c379; font-weight: bold; }
+    .hl { fill: #e5c07b; }
+  </style>
+  <rect x="0.5" y="0.5" width="879" height="299" rx="10" fill="#161b22" stroke="#30363d"/>
+  <rect x="0.5" y="0.5" width="879" height="34" rx="10" fill="#21262d" stroke="#30363d"/>
+  <rect x="0.5" y="24" width="879" height="11" fill="#21262d"/>
+  <circle cx="22" cy="17.5" r="5.5" fill="#ff5f57"/>
+  <circle cx="42" cy="17.5" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="17.5" r="5.5" fill="#28c840"/>
+  <text x="440" y="22" text-anchor="middle" fill="#8b949e" font-size="12">pgmem — vector + graph + temporal decay in pure Postgres</text>
+  <text x="20" y="64" class="line d0"><tspan class="prompt">$</tspan><tspan class="cmd" dx="8">bash scripts/smoke.sh</tspan></text>
+  <text x="20" y="90" class="line d1"><tspan class="tag">[smoke]</tspan><tspan class="txt" dx="6">building dist/ with tsc</tspan></text>
+  <text x="20" y="116" class="line d2"><tspan class="tag">[smoke]</tspan><tspan class="txt" dx="6">migrate: schema + ranking functions applied, vector(256)</tspan></text>
+  <text x="20" y="142" class="line d3"><tspan class="tag">[smoke]</tspan><tspan class="txt" dx="6">add: 2 memories stored, first id=9f1e1677-ce6e-4056-b5b0-32fc1e36da28</tspan></text>
+  <text x="20" y="168" class="line d4"><tspan class="tag">[smoke]</tspan><tspan class="txt" dx="6">search: top hit "Mika prefers oat-milk lattes in the morning" </tspan><tspan class="hl">score=0.941</tspan></text>
+  <text x="20" y="194" class="line d5"><tspan class="tag">[smoke]</tspan><tspan class="txt" dx="6">graph: 3 nodes, 2 edges, 1 memory</tspan></text>
+  <text x="20" y="220" class="line d6"><tspan class="tag">[smoke]</tspan><tspan class="txt" dx="6">decay: pruned 1 stale memory (dry-run agreed)</tspan></text>
+  <text x="20" y="246" class="line d7"><tspan class="tag">[smoke]</tspan><tspan class="txt" dx="6">all assertions passed</tspan></text>
+  <text x="20" y="276" class="line d8"><tspan class="ok">SMOKE OK</tspan></text>
+</svg>

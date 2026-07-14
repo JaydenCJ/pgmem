@@ -1,0 +1,28 @@
+# Postgres with pgvector for pgmem.
+# Usage:
+#   cp .env.example .env   # then set a strong POSTGRES_PASSWORD
+#   docker compose up -d
+# Data lives in the named volume `pgmem-data`; back it up with pg_dump or by
+# snapshotting the volume.
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: pgmem-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-pgmem}
+      # No default password on purpose: compose fails fast unless you set one.
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-pgmem}
+    ports:
+      # Bound to loopback only; change deliberately if you need remote access.
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgmem-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-pgmem} -d ${POSTGRES_DB:-pgmem}"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+volumes:
+  pgmem-data:

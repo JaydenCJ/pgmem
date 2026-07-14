@@ -1,0 +1,56 @@
+{
+  "name": "pgmem",
+  "version": "0.1.0",
+  "description": "Agent memory engine in pure Postgres: pgvector similarity + entity graph + temporal decay ranking. Zero runtime dependencies, MIT.",
+  "license": "MIT",
+  "author": "JaydenCJ",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "sql",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "smoke": "bash scripts/smoke.sh"
+  },
+  "keywords": [
+    "postgres",
+    "pgvector",
+    "agent",
+    "memory",
+    "llm",
+    "knowledge-graph",
+    "temporal-decay",
+    "self-hosted"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaydenCJ/pgmem.git"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.4",
+    "@electric-sql/pglite-pgvector": "^0.0.5",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.1.0"
+  },
+  "homepage": "https://github.com/JaydenCJ/pgmem#readme",
+  "bugs": {
+    "url": "https://github.com/JaydenCJ/pgmem/issues"
+  }
+}
